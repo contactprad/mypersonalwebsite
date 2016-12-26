@@ -4,42 +4,43 @@
 
 $(document).ready(function(){
 	
-	$("aboutpage").show();
-	$("aboutpage").addClass("active");
-	$("#professionalpage").hide();
-	$("#familypage").hide();
-	$("#pktheorypage").hide();
-	
+	$("#about").hide();
+	$("#work").hide();
+	$("#family").hide();	
+	$("#profile_pic").hide();
+	var hash = window.location.hash;
+	console.log(hash);
+	$(hash).show();
+	if(!(hash =="#family"))
+		$("#profile_pic").show();
 	//action on about page click
-	$("#about").click(function(){
+	$("#aboutlink").click(function(){
 
-		$("#aboutpage").show();
+		$("#about").show();
 		$("#profile_pic").show();
 		$("#footer").show();
-		$("#professionalpage").hide();
-		$("#familypage").hide();
-		$("#pktheorypage").hide();
+		$("#work").hide();
+		$("#family").hide();
 	});
 
 	//action on professional page click
-	$("#work").click(function(){
+	$("#worklink").click(function(){
 
-		$("#aboutpage").hide();
+		$("#about").hide();
 		$("#profile_pic").show();
 		$("#footer").show();
-		$("#professionalpage").show();
-		$("#familypage").hide();
-		$("#pktheorypage").hide();
+		$("#work").show();
+		$("#family").hide();
+		
 	});
 	
 	//action on family page click
-	$("#family").click(function(){
+	$("#familylink").click(function(){
 		
-		$("#aboutpage").hide();
+		$("#about").hide();
 		$("#profile_pic").hide();
-		$("#professionalpage").hide();
-		$("#familypage").show();
-		$("#pktheorypage").hide();
+		$("#work").hide();
+		$("#family").show();
 	});
 		
 });
